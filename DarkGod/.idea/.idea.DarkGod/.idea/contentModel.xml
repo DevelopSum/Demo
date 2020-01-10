@@ -25,6 +25,7 @@
           </e>
           <e p="GameRoot.cs" t="Include" />
           <e p="Service" t="Include">
+            <e p="AudioSvc.cs" t="Include" />
             <e p="ResSvc.cs" t="Include" />
           </e>
           <e p="system" t="Include">

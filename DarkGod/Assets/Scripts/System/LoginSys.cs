@@ -32,6 +32,7 @@ public class LoginSys : MonoBehaviour
             //打开LoginWndPanel
             loginWind.gameObject.SetActive(true);
             loginWind.SetWndState();
+            AudioSvc.Instance.PlayBGMusic();
         });
 
         //显示加载进度
