@@ -9,7 +9,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadingWind : MonoBehaviour 
+public class LoadingWind : WindowRoot 
 {
     /// <summary>
     /// 提示文本
@@ -39,7 +39,7 @@ public class LoadingWind : MonoBehaviour
     /// <summary>
     /// 初始化窗口
     /// </summary>
-    public void InitWnd() 
+    protected override void InitWnd() 
     {
         fgWidth = imgFG.GetComponent<RectTransform>().sizeDelta.x;
 

@@ -1,4 +1,4 @@
-/****************************************************
+﻿/****************************************************
     文件：LoginWind.cs
 	作者：Maven
     邮箱: maven_luo@outlook.com
@@ -9,14 +9,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoginWind : MonoBehaviour 
+public class LoginWind : WindowRoot
 {
     public InputField iptAcct;
     public InputField iptPass;
     public Button btnEnter;
     public Button btnNotice;
-    public void InitWnd()
-    { 
+    protected override void InitWnd()
+    {
         Debug.Log("Init InitWnd...");
         //获取本地存储的账号密码
         if (PlayerPrefs.HasKey("Acct") && PlayerPrefs.HasKey("Pass"))
