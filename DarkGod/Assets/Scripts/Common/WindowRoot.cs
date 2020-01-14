@@ -12,8 +12,9 @@ using UnityEngine.UI;
 
 public class WindowRoot : MonoBehaviour 
 {
-    public ResSvc resSvc = null;
-
+    protected ResSvc resSvc = null;
+    protected AudioSvc audioSvc = null;
+    
     /// <summary>
     /// 窗口是否激活
     /// </summary>
@@ -37,11 +38,13 @@ public class WindowRoot : MonoBehaviour
     protected virtual void InitWnd()
     {
         resSvc = ResSvc.Instance;
+        audioSvc = AudioSvc.Instance;
     }
 
     protected virtual void ClearWnd()
     {
         resSvc = null;
+        audioSvc = null;
     }
 
     #region Tool Functtions

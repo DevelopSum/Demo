@@ -13,15 +13,32 @@ public class GameRoot : MonoBehaviour
     public static GameRoot Instance = null;
 
     public LoadingWind loadingWind;
-
+    public DynamicWnd dynamicWnd;
+    
     private void Start()
     {
         DontDestroyOnLoad(this);
         Instance = this;
         Debug.Log("Game Start...");
+
+        ClearUIRoot();
+        
         Init();
     }
 
+    /// <summary>
+    /// 初始化所有UI面板
+    /// </summary>
+    public void ClearUIRoot()
+    {
+        Transform cavas = transform.Find("Canvas");
+        for (int i = 0; i < cavas.childCount; i++)
+        {
+            cavas.GetChild(i).gameObject.SetActive(false);   
+        }
+        dynamicWnd.SetWndState();
+    }
+    
     private void Init()
     {
         //服务模块初始化
@@ -36,5 +53,10 @@ public class GameRoot : MonoBehaviour
 
         //进入登陆场景并加载相应UI
         login.EnterLogin();
+    }
+
+    public static void AddTips(string tips)
+    {
+        Instance.dynamicWnd.AddTips(tips);
     }
 }

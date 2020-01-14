@@ -12,15 +12,23 @@
             <e p="MogoSkybox.shader" t="Include" />
           </e>
         </e>
-        <e p="NewBehaviourScript.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="ScriptsInfoRecoder.cs" t="Include" />
           </e>
         </e>
+        <e p="Resources" t="Include">
+          <e p="ResCfgs" t="Include">
+            <e p="rdname.xml" t="Include" />
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="Common" t="Include">
             <e p="Constants.cs" t="Include" />
+            <e p="LoopDragonAni.cs" t="Include" />
+            <e p="PathDefine.cs" t="Include" />
+            <e p="PETools.cs" t="Include" />
+            <e p="SystemRoot.cs" t="Include" />
             <e p="WindowRoot.cs" t="Include" />
           </e>
           <e p="GameRoot.cs" t="Include" />
@@ -32,6 +40,8 @@
             <e p="LoginSys.cs" t="Include" />
           </e>
           <e p="UIWindow" t="Include">
+            <e p="CreateWnd.cs" t="Include" />
+            <e p="DynamicWnd.cs" t="Include" />
             <e p="LoadingWind.cs" t="Include" />
             <e p="LoginWind.cs" t="Include" />
           </e>

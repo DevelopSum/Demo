@@ -34,7 +34,7 @@ public class AudioSvc : MonoBehaviour
 	/// <param name="isLoop">是否循环</param>
 	public void PlayBGMusic(string name, bool isLoop = true)
 	{
-		AudioClip audio =ResSvc.Instance.LoadAudio("ResAudio" + name,true);
+		AudioClip audio =ResSvc.Instance.LoadAudio("ResAudio/" + name,true);
 		if (bgAudio.clip == null || bgAudio.clip.name != audio.name)
 		{
 			bgAudio.clip = audio;
@@ -45,7 +45,7 @@ public class AudioSvc : MonoBehaviour
 
 	public void PlayUIAudio(string name)
 	{
-		AudioClip audio = ResSvc.Instance.LoadAudio("ResAudio/" + name,true)
+		AudioClip audio = ResSvc.Instance.LoadAudio("ResAudio/" + name, true);
 		{
 			uiAudio.clip = audio;
 			uiAudio.Play();

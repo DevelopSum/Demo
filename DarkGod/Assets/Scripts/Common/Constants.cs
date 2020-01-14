@@ -14,4 +14,19 @@ public class Constants
     /// 场景名称
     /// </summary>
     public const string SceneLogin = "SceneLogin";
+
+    /// <summary>
+    /// 背景音效名称
+    /// </summary>
+    public const string BGLogin = "bgLogin";
+    
+    /// <summary>
+    /// 登陆按钮点击音效
+    /// </summary>
+    public const string UILoginBtn = "uiLoginBtn";
+    
+    /// <summary>
+    /// 常规UI点击音效
+    /// </summary>
+    public const string UIClickBtn = "uiClickBtn";
 }
