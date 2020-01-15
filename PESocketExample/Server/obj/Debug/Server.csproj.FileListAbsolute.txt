@@ -1,0 +1,10 @@
+D:\Demo\PESocketExample\Server\bin\Debug\Server.exe
+D:\Demo\PESocketExample\Server\bin\Debug\Server.pdb
+D:\Demo\PESocketExample\Server\bin\Debug\PESocket.dll
+D:\Demo\PESocketExample\Server\bin\Debug\PESocket.pdb
+D:\Demo\PESocketExample\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\Demo\PESocketExample\Server\obj\Debug\Server.csproj.CopyComplete
+D:\Demo\PESocketExample\Server\obj\Debug\Server.exe
+D:\Demo\PESocketExample\Server\obj\Debug\Server.pdb
+D:\Demo\PESocketExample\Server\bin\Debug\Protocal.dll
+D:\Demo\PESocketExample\Server\bin\Debug\Protocal.pdb

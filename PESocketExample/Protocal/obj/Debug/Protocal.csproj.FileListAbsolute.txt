@@ -1,0 +1,6 @@
+D:\Demo\PESocketExample\Protocal\obj\Debug\Protocal.csprojAssemblyReference.cache
+D:\Demo\自己写的服务端\Protocal.dll
+D:\Demo\自己写的服务端\Protocal.pdb
+D:\Demo\PESocketExample\Protocal\obj\Debug\Protocal.csproj.CopyComplete
+D:\Demo\PESocketExample\Protocal\obj\Debug\Protocal.dll
+D:\Demo\PESocketExample\Protocal\obj\Debug\Protocal.pdb
