@@ -51,13 +51,24 @@ public class NetSvc : MonoBehaviour
         Debug.Log("Init NetSvc");
     }
 
+    /// <summary>
+    /// 发送消息
+    /// </summary>
+    /// <param name="msg"> 消息 </param>
+    public void SendMsg(GameMsg msg) {
+        if (client.session != null)
+        {
+            client.session.SendMsg(msg);
+        }
+        else
+        {
+            GameRoot.AddTips("服务器未连接");
+            InitSvc();
+        }
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            client.session.SendMsg(new GameMsg{ 
-            text="Hello"
-            });
-        }
+      
     }
 }

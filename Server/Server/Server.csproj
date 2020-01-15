@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Cache\CacheSvc.cs" />
     <Compile Include="Common\ServerRoot.cs" />
     <Compile Include="Common\ServerStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -44,15 +45,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Analyzer Include="..\Libs\PESocket.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\pepROTOCOL\PEProtocol.csproj">
       <Project>{9fd6e219-0e79-46ee-b8be-45495ab14d4d}</Project>
       <Name>PEProtocol</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="PESocket">
+    <Reference Include="PESocket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\PESocket.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

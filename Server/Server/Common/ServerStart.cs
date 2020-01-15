@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
             while (true)
             {
-
+            ServerRoot.Instance.Update();
             }
 
 

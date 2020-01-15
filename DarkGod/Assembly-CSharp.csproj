@@ -294,6 +294,12 @@
     <Reference Include="nunit.framework">
       <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="PEProtocol">
+      <HintPath>D:/Demo/DarkGod/Assets/Scripts/Net/PEProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="PESocket">
+      <HintPath>D:/Demo/DarkGod/Assets/Scripts/Net/PESocket.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>D:/Demo/DarkGod/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -302,12 +308,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Demo/DarkGod/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="PESocket">
-      <HintPath>D:/Demo/DarkGod/Assets/Scripts/Net/PESocket.dll</HintPath>
-    </Reference>
-    <Reference Include="PEProtocol">
-      <HintPath>D:/Demo/DarkGod/Assets/Scripts/Net/PEProtocol.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

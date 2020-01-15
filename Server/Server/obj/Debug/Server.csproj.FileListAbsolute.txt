@@ -1,10 +1,10 @@
 D:\Demo\Server\Server\bin\Debug\Server.exe.config
 D:\Demo\Server\Server\bin\Debug\Server.exe
 D:\Demo\Server\Server\bin\Debug\Server.pdb
-D:\Demo\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
-D:\Demo\Server\Server\obj\Debug\Server.exe
-D:\Demo\Server\Server\obj\Debug\Server.pdb
 D:\Demo\Server\Server\bin\Debug\PEProtocol.dll
 D:\Demo\Server\Server\bin\Debug\PESocket.dll
 D:\Demo\Server\Server\bin\Debug\PEProtocol.pdb
+D:\Demo\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
 D:\Demo\Server\Server\obj\Debug\Server.csproj.CopyComplete
+D:\Demo\Server\Server\obj\Debug\Server.exe
+D:\Demo\Server\Server\obj\Debug\Server.pdb

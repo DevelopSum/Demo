@@ -1,8 +1,8 @@
 D:\Demo\Server\pepROTOCOL\bin\Debug\PEProtocol.dll
 D:\Demo\Server\pepROTOCOL\bin\Debug\PEProtocol.pdb
 D:\Demo\Server\pepROTOCOL\bin\Debug\PESocket.dll
+D:\Demo\DarkGod\Assets\Scripts\Net\PEProtocol.dll
+D:\Demo\DarkGod\Assets\Scripts\Net\PEProtocol.pdb
 D:\Demo\Server\pepROTOCOL\obj\Debug\PEProtocol.csproj.CopyComplete
 D:\Demo\Server\pepROTOCOL\obj\Debug\PEProtocol.dll
 D:\Demo\Server\pepROTOCOL\obj\Debug\PEProtocol.pdb
-D:\Demo\DarkGod\Assets\Scripts\Net\PEProtocol.dll
-D:\Demo\DarkGod\Assets\Scripts\Net\PEProtocol.pdb

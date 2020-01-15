@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Net.Mime;
 using System.Xml;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,7 +22,7 @@ public class ResSvc : MonoBehaviour
         Instance = this;
         InitRDNameCfg();
         
-        Debug.Log("Init ResSvc...");
+        PECommon.Log("Init ResSvc...");
     }
 
     /// <summary>
@@ -72,7 +71,7 @@ public class ResSvc : MonoBehaviour
     private void InitRDNameCfg() {
         TextAsset xml = Resources.Load<TextAsset>(PathDefine.RDNameCfg);
         if (!xml) {
-            Debug.LogError("xml file:" + PathDefine.RDNameCfg + " not exist");
+            PECommon.Log("xml file:" + PathDefine.RDNameCfg + " not exist",LogType.Error);
         }
         else {
             XmlDocument doc = new XmlDocument();
