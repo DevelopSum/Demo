@@ -36,6 +36,7 @@
     <Compile Include="Cache\CacheSvc.cs" />
     <Compile Include="Common\ServerRoot.cs" />
     <Compile Include="Common\ServerStart.cs" />
+    <Compile Include="DB\DBMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\NetSvc\NetSvc.cs" />
     <Compile Include="Service\NetSvc\ServerSession.cs" />
@@ -54,11 +55,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Libs\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="PESocket, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\PESocket.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

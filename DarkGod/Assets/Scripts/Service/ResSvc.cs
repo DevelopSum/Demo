@@ -44,6 +44,8 @@ public class ResSvc : MonoBehaviour
                 if (loaded != null)
                 {
                     loaded();
+                    //可以这样写
+                    //loaded?.Invoke();
                 }
                 prgCB = null;
                 sceneAsync = null;
@@ -60,6 +62,31 @@ public class ResSvc : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 用来存储声音
+    /// </summary>
+    private Dictionary<string, AudioClip> adDic = new Dictionary<string, AudioClip>();
+
+    /// <summary>
+    /// 加载声音
+    /// </summary>
+    /// <param name="path"> 路径 </param>
+    /// <param name="cache"> 是否循环 </param>
+    /// <returns></returns>
+    public AudioClip LoadAudio(string path, bool cache = false)
+    {
+        AudioClip au = null;
+        if (!adDic.TryGetValue(path, out au))
+        {
+            au = Resources.Load<AudioClip>(path);
+            if (cache)
+            {
+                adDic.Add(path, au);
+            }
+        }
+        return au;
+    }
+
     #region InitCfgs(读取xml)
     /// <summary>
     /// 存储姓 男人名字 女人名字    
@@ -67,27 +94,37 @@ public class ResSvc : MonoBehaviour
     private List<string> surnameLst = new List<string>();
     private List<string> manLst = new List<string>();
     private List<string> womanLst = new List<string>();
-    
-    private void InitRDNameCfg() {
+
+    /// <summary>
+    /// 初始化随机名字配置
+    /// </summary>
+    private void InitRDNameCfg()
+    {
         TextAsset xml = Resources.Load<TextAsset>(PathDefine.RDNameCfg);
-        if (!xml) {
-            PECommon.Log("xml file:" + PathDefine.RDNameCfg + " not exist",LogType.Error);
+        if (!xml)
+        {
+            PECommon.Log("xml file:" + PathDefine.RDNameCfg + " not exist", LogType.Error);
         }
-        else {
+        else
+        {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xml.text);
 
             XmlNodeList nodLst = doc.SelectSingleNode("root").ChildNodes;
 
-            for (int i = 0; i < nodLst.Count; i++) {
+            for (int i = 0; i < nodLst.Count; i++)
+            {
                 XmlElement ele = nodLst[i] as XmlElement;
 
-                if (ele.GetAttributeNode("ID") == null) {
+                if (ele.GetAttributeNode("ID") == null)
+                {
                     continue;
                 }
                 int ID = Convert.ToInt32(ele.GetAttributeNode("ID").InnerText);
-                foreach (XmlElement e in nodLst[i].ChildNodes) {
-                    switch (e.Name) {
+                foreach (XmlElement e in nodLst[i].ChildNodes)
+                {
+                    switch (e.Name)
+                    {
                         case "surname":
                             surnameLst.Add(e.InnerText);
                             break;
@@ -99,13 +136,15 @@ public class ResSvc : MonoBehaviour
                             break;
                     }
                 }
-
             }
-
         }
-
     }
 
+    /// <summary>
+    /// 获取随机名字数据
+    /// </summary>
+    /// <param name="man"> 性别为男 </param>
+    /// <returns></returns>
     public string GetRDNameData(bool man = true)
     {
         Random rd = new Random();
@@ -123,22 +162,5 @@ public class ResSvc : MonoBehaviour
     }
     #endregion
     
-    /// <summary>
-    /// 用来存储声音
-    /// </summary>
-    private Dictionary<string, AudioClip> adDic = new Dictionary<string, AudioClip>();
     
-    public AudioClip LoadAudio(string path, bool cache = false)
-    {
-        AudioClip au = null;
-        if (!adDic.TryGetValue(path,out au))
-        {
-            au = Resources.Load<AudioClip>(path);
-            if (cache)
-            {
-                adDic.Add(path,au);
-            }
-        }
-        return au;
-    }
 }

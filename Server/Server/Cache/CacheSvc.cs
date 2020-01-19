@@ -23,16 +23,21 @@ public class CacheSvc
         }
     }
 
-    public void Init()
-    {
-        PECommon.Log("CacheSvc Init Done.");
-    }
+    private DBMgr dbMgr;
 
     /// <summary>
     /// 账号缓存
     /// </summary>
     private Dictionary<string, ServerSession> onLineAcctDic = new Dictionary<string, ServerSession>();
     private Dictionary<ServerSession, PlayerData> onLineSessionDic = new Dictionary<ServerSession, PlayerData>();
+
+    public void Init()
+    {
+        dbMgr = DBMgr.Instance;
+        PECommon.Log("CacheSvc Init Done.");
+    }
+
+    
     /// <summary>
     /// /是否上线
     /// </summary>
@@ -45,11 +50,8 @@ public class CacheSvc
     /// <summary>
     /// 根据账号密码返回对应账号数据，密码错误返回null,账号不存在则默认创建新账号
     /// </summary>
-    /// <param name="acct"></param>
-    /// <param name="pass"></param>
-    /// <returns></returns>
     public PlayerData GetPlayerData(string acct, string pass) {
-        return null;
+        return dbMgr.QueryPlayerData(acct, pass);
     }
 
     /// <summary>
@@ -58,5 +60,28 @@ public class CacheSvc
     public void AcctOnline(string acct, ServerSession session, PlayerData playerData) {
         onLineAcctDic.Add(acct, session);
         onLineSessionDic.Add(session, playerData);
+    }
+
+    /// <summary>
+    /// 名字是否存在
+    /// </summary>
+    public bool IsNameExist(string name)
+    {
+        return dbMgr.QueryNameData(name);
+    }
+
+    /// <summary>
+    /// 获取playerdata数据
+    /// </summary>
+    public PlayerData GetPlayerDataBySession(ServerSession session)
+    {
+        if (onLineSessionDic.TryGetValue(session, out PlayerData playerdata))
+        {
+            return playerdata;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

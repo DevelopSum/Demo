@@ -1,5 +1,6 @@
-﻿
-using PEProtocol;
+﻿using PEProtocol;
+
+
 /// <summary>
 /// 登录业务系统
 /// </summary>
@@ -29,8 +30,8 @@ public class LoginSys
     /// 业务处理
     /// </summary>
     /// <param name="msg"></param>
-    public void ReqLogin(MsgPack pack) {
-
+    public void ReqLogin(MsgPack pack)
+    {
         ReqLogin data = pack.msg.reqLogin;
 
         //当前账号是否已经上线
@@ -38,8 +39,6 @@ public class LoginSys
         {
             cmd = (int)CMD.RspLogin
         };
-        pack.session.SendMsg(msg);
-
         if (cacheSvc.IsAcctOnLine(data.acct))
         {
             //已上线 返回错误信息
@@ -57,12 +56,20 @@ public class LoginSys
             }
             else
             {
-                msg.reqLogin = new ReqLogin { playerData = pd};
+                msg.rspLogin = new RspLogin { playerData = pd };
             }
             //缓存账号数据
-            cacheSvc.AcctOnline(data.acct, pack.session, pd);   
+            cacheSvc.AcctOnline(data.acct, pack.session, pd);
         }
         //回应客户端
-        pack.session.SendMsg(msg); 
+        pack.session.SendMsg(msg);
+    }
+
+    /// <summary>
+    /// 重命名
+    /// </summary>
+    public void ReqRename(MsgPack pack)
+    {
+
     }
 }

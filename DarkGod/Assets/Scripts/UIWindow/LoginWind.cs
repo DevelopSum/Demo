@@ -19,6 +19,7 @@ public class LoginWind : WindowRoot
     protected override void InitWnd()
     {
         base.InitWnd();
+
         Debug.Log("Init InitWnd...");
         //获取本地存储的账号密码
         if (PlayerPrefs.HasKey("Acct") && PlayerPrefs.HasKey("Pass"))

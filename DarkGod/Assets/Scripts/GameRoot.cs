@@ -6,15 +6,16 @@
 	功能：游戏启动入口
 *****************************************************/
 
+using PEProtocol;
 using UnityEngine;
 
-public class GameRoot : MonoBehaviour 
+public class GameRoot : MonoBehaviour
 {
     public static GameRoot Instance = null;
 
     public LoadingWind loadingWind;
     public DynamicWnd dynamicWnd;
-    
+
     private void Start()
     {
         DontDestroyOnLoad(this);
@@ -22,7 +23,7 @@ public class GameRoot : MonoBehaviour
         Debug.Log("Game Start...");
 
         ClearUIRoot();
-        
+
         Init();
     }
 
@@ -34,11 +35,11 @@ public class GameRoot : MonoBehaviour
         Transform cavas = transform.Find("Canvas");
         for (int i = 0; i < cavas.childCount; i++)
         {
-            cavas.GetChild(i).gameObject.SetActive(false);   
+            cavas.GetChild(i).gameObject.SetActive(false);
         }
         dynamicWnd.SetWndState();
     }
-    
+
     private void Init()
     {
         //服务模块初始化
@@ -57,8 +58,27 @@ public class GameRoot : MonoBehaviour
         login.EnterLogin();
     }
 
+    /// <summary>
+    /// 添加提示
+    /// </summary>
+    /// <param name="tips"> 提示文本 </param>
     public static void AddTips(string tips)
     {
         Instance.dynamicWnd.AddTips(tips);
+    }
+
+    private PlayerData playerData = null;
+
+    public PlayerData PlayerData
+    {
+        get
+        {
+            return playerData;
+        }
+    }
+
+    public void SetPlayerData(RspLogin data)
+    {
+        playerData = data.playerData;
     }
 }

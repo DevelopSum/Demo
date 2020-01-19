@@ -15,17 +15,14 @@ public class LoadingWind : WindowRoot
     /// 提示文本
     /// </summary>
     public Text txtTips;
-
     /// <summary>
     /// 进度条前景
     /// </summary>
     public Image imgFG;
-
     /// <summary>
     /// 字体上特效
     /// </summary>
     public Image imgPoint;
-
     /// <summary>
     /// 进度文本
     /// </summary>
@@ -47,7 +44,8 @@ public class LoadingWind : WindowRoot
 
         SetText(txtTips,"这是一条游戏Tips");
         SetText(txtPrg,"0%");
-        imgFG.fillAmount = 0;imgPoint.transform.localPosition = new Vector3(-545f, 0, 0);
+        imgFG.fillAmount = 0;
+        imgPoint.transform.localPosition = new Vector3(-545f, 0, 0);
     }
 
     public void SetProgress(float prg)

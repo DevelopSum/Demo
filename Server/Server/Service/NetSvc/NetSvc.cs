@@ -2,15 +2,17 @@
 using PEProtocol;
 using System.Collections.Generic;
 
-
+/// <summary>
+/// 网络服务
+/// </summary>
 public class MsgPack {
     public ServerSession session;
     public GameMsg msg;
+
     public MsgPack(ServerSession session, GameMsg msg) {
         this.session = session;
         this.msg = msg;
     }
-
 }
 
 public class NetSvc
@@ -75,14 +77,11 @@ public class NetSvc
     private void HadOutMsg(MsgPack pack) {
         switch ((CMD)pack.msg.cmd)
         {
-            case CMD.None:
-                break;
             case CMD.ReqLogin:
                 LoginSys.Instance.ReqLogin(pack);
                 break;
-            case CMD.RspLogin:
-                break;
-            default:
+            case CMD.ReqRename:
+                LoginSys.Instance.ReqRename(pack);
                 break;
         }
     }

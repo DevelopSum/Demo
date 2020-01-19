@@ -5,8 +5,8 @@
     日期：2020/1/10 10:35:41
 	功能：登录注册业务系统
 *****************************************************/
-
 using UnityEngine;
+using PEProtocol;
 
 public class LoginSys : SystemRoot
 {
@@ -18,6 +18,7 @@ public class LoginSys : SystemRoot
     public override void InitSys()
     {
         base.InitSys();
+
         Instance = this;
         Debug.Log("Init LoginSys ...");
     }
@@ -39,13 +40,20 @@ public class LoginSys : SystemRoot
     /// <summary>
     /// 模拟接受网络请求，登录成功
     /// </summary>
-    public void RspLogin() {
+    public void RspLogin(GameMsg msg) {
         GameRoot.AddTips("登录成功");
+        GameRoot.Instance.SetPlayerData(msg.rspLogin);
 
-        //打开角色创建界面
-        createWnd.SetWndState();
+        if (msg.rspLogin.playerData.name == "")
+        {
+            //打开角色创建界面
+            createWnd.SetWndState();
+        }
+        else
+        {
+            //进入主城TODO
+        }
         //关闭登录界面
         loginWnd.SetWndState(false);
     }
-    
 }

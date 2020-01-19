@@ -51,7 +51,6 @@ public class WindowRoot : MonoBehaviour
     }
 
     #region Tool Functtions
-
     /// <summary>
     /// 对物体的激活
     /// </summary>
@@ -82,7 +81,7 @@ public class WindowRoot : MonoBehaviour
         txt.transform.gameObject.SetActive(state);
     } 
 
-    /// <summary>
+        /// <summary>
         /// 设置文字显示
         /// </summary>
         /// <param name="text">文字组件</param>
@@ -106,6 +105,5 @@ public class WindowRoot : MonoBehaviour
         {
             SetText(txt, num.ToString());
         } 
-
     #endregion
 }

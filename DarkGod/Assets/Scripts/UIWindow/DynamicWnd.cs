@@ -23,19 +23,20 @@ public class DynamicWnd : WindowRoot
 	/// 动态UI显示字体
 	/// </summary>
 	public Text txtTips;
-	/// <summary>
-	/// 用于将提示文本存储
-	/// </summary>
-	private Queue<string> tipsQue = new Queue<string>();
 
 	/// <summary>
 	/// 当前是否有提示文本正在播放
 	/// </summary>
 	private bool isTipsShow = false;
+	/// <summary>
+	/// 用于将提示文本存储
+	/// </summary>
+	private Queue<string> tipsQue = new Queue<string>();
 
 	protected override void InitWnd()
 	{
 		base.InitWnd();
+
 		SetActive(txtTips,false);
 	}
 
@@ -64,6 +65,10 @@ public class DynamicWnd : WindowRoot
 		}
 	}
 
+	/// <summary>
+	/// 设置提示文本
+	/// </summary>
+	/// <param name="tips"></param>
 	private void SetTips(string tips)
 	{
 		SetActive(txtTips);
@@ -78,6 +83,9 @@ public class DynamicWnd : WindowRoot
 		}));
 	}
 
+	/// <summary>
+	/// 字体帧动画控制
+	/// </summary>
 	private IEnumerator AniPlayDone(float sec, Action cb)
 	{
 		yield return new WaitForSeconds(sec);

@@ -1,0 +1,8 @@
+D:\Demo\SqlTest\SqlTest\bin\Debug\SqlTest.exe.config
+D:\Demo\SqlTest\SqlTest\bin\Debug\SqlTest.exe
+D:\Demo\SqlTest\SqlTest\bin\Debug\SqlTest.pdb
+D:\Demo\SqlTest\SqlTest\bin\Debug\MySql.Data.dll
+D:\Demo\SqlTest\SqlTest\obj\Debug\SqlTest.csprojAssemblyReference.cache
+D:\Demo\SqlTest\SqlTest\obj\Debug\SqlTest.csproj.CopyComplete
+D:\Demo\SqlTest\SqlTest\obj\Debug\SqlTest.exe
+D:\Demo\SqlTest\SqlTest\obj\Debug\SqlTest.pdb
