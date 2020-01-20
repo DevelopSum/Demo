@@ -70,6 +70,22 @@ public class LoginSys
     /// </summary>
     public void ReqRename(MsgPack pack)
     {
-
+        ReqRename data = pack.msg.reqRename;
+        GameMsg msg = new GameMsg
+        {
+            cmd = (int)CMD.RspRename
+        };
+        if (cacheSvc.IsNameExist(data.name))
+        {
+            //名字是否已经存在
+            //存在返回错误码
+            msg.err = (int)ErrorCode.NameIsExist;
+        }
+        else
+        {
+            //不存在：更新缓存，以及数据库，再返回给客户端
+            PlayerData playerData = cacheSvc.GetPlayerDataBySession(pack.session);
+            playerData.name = data.name;
+        }
     }
 }
